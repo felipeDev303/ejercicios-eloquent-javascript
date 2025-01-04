@@ -1,3 +1,6 @@
+/* Primer ejemplo contador
+let
+
 /*Ejercicios
 
 1. Ciclo de un triángulo 
