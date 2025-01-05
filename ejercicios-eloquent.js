@@ -1,5 +1,31 @@
-/* Primer ejemplo contador
-let
+/* Primer ejemplo contador*/
+let total = 0,
+  count = 1;
+while (count <= 10) {
+  total += count;
+  count += 1;
+}
+console.log(total);
+// -> 55
+
+0 / 0; // NaN
+Infinity -
+  Infinity // NaN
+  `Debajo en el mar`; // Comillas invertidas
+("Descansa en el océano"); // Comillas doble
+("Flota en el océano"); //Comillas simples
+
+"Esta es la primera linea\nY esta es la segunda"/*Cuando el carácter n es precedido por una barra invertida, este
+se interpreta como un Newline (salto de linea).*/ `Esta es la primera linea 
+Y esta es la segunda`;
+
+('Un caracter de salto de linea es: "\\n"'); // “Un carácter de salto de linea es escrito así: "\n".”
+
+"con" +
+  "ca" +
+  "te" +
+  "nar" //"concatenar"
+  `La mitad de 100 es ${100 / 2}`; // "La mitad de 100 es 50" ${esto se computa}
 
 /*Ejercicios
 
