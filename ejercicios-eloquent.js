@@ -27,6 +27,12 @@ Y esta es la segunda`;
   "nar" //"concatenar"
   `La mitad de 100 es ${100 / 2}`; // "La mitad de 100 es 50" ${esto se computa}
 
+//Pagina 17: Operadores unarios
+console.log(typeof 4.5); // → number
+console.log(typeof "x"); // → string
+// El - puede ser unario y binario
+console.log(-(10 - 2)); // → -8
+
 /*Ejercicios
 
 1. Ciclo de un triángulo 
