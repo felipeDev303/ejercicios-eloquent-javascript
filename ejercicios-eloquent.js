@@ -33,6 +33,19 @@ console.log(typeof "x"); // → string
 // El - puede ser unario y binario
 console.log(-(10 - 2)); // → -8
 
+// Página 17: Valores booleanos
+console.log(3 > 2); // → true
+console.log(3 < 2); // → false
+console.log("Aardvark" < "Zoroaster"); // → true
+
+console.log("A" < "Z"); // -> True
+console.log("a" < "Z"); // -> False
+
+// Página 18: Igual a == y diferente a !=
+console.log("Itchy" != "Scratchy"); // -> true
+console.log("Manzana" == "Naranja"); // -> False
+console.log(NaN == NaN); // -> False
+
 /*Ejercicios
 
 1. Ciclo de un triángulo 
