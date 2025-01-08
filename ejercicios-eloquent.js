@@ -46,6 +46,34 @@ console.log("Itchy" != "Scratchy"); // -> true
 console.log("Manzana" == "Naranja"); // -> False
 console.log(NaN == NaN); // -> False
 
+// Página 18: Operadores lógicos
+// El Operador and &&
+console.log(true && false); //-> false
+console.log(true && true); // -> true
+
+// Página 19: Operadores lógicos
+// El operador or ||
+console.log(true || false); // -> true
+console.log(false || false); // -> False
+
+// Operador unario !
+!true == false;
+
+// Operador ternario
+console.log(true ? 1 : 2); //-> 1
+console.log(false ? 1 : 2); //-> 2
+
+// Página 20: Conversión de tipo automática
+console.log(8 * null); // -> 0
+console.log("5" - 1); //-> 4
+console.log("5" + 1); //->51
+console.log("cinco" * 2); //->NaN
+console.log(false == 0); //->true
+
+// Página 21
+console.log(null == undefined); //->true
+console.log(null == 0); //-> false
+
 /*Ejercicios
 
 1. Ciclo de un triángulo 
