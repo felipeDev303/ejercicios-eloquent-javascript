@@ -76,9 +76,28 @@ console.log(potencia(2, 6));
 // → 64
 
 // Cierre
+function envolverValor(n) {
+  let local = n;
+  return () => local;
+}
+let envolver1 = envolverValor(1);
+let envolver2 = envolverValor(2);
+console.log(envolver1()); // → 1
+console.log(envolver2()); // → 2
+
 function multiplicador(factor) {
   return (numero) => numero * factor;
 }
 let duplicar = multiplicador(2);
 console.log(duplicar(5));
 // → 10
+
+// Recursión
+function potencia(base, exponente) {
+  if (exponente == 0) {
+    return 1;
+  } else {
+    return base * potencia(base, exponente - 1);
+  }
+}
+console.log(potencia(2, 3)); // -> 8
