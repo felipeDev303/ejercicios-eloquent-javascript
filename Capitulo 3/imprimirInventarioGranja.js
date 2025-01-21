@@ -1,3 +1,4 @@
+// Funciones crecientes
 function imprimirInventarioGranja(vacas, pollos) {
   let stringVaca = String(vacas);
   while (stringVaca.length < 3) {
