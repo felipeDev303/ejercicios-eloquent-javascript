@@ -1,16 +1,6 @@
 // CAPÍTULO 1
 
-/* Primer ejemplo contador*/
-let total = 0,
-  count = 1;
-while (count <= 10) {
-  total += count;
-  count += 1;
-}
-console.log(total);
-// -> 55
-
-0 / 0; // NaN
+// 0 / 0; // NaN
 Infinity -
   Infinity // NaN
   `Debajo en el mar`; // Comillas invertidas
