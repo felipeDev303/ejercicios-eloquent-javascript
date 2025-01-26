@@ -3,6 +3,7 @@ console.log(typeof ouch.toUpperCase); // -> function
 
 console.log(ouch.toUpperCase()); // -> OUCH
 
+// Creamos un array
 let secuencia = [1, 2, 3];
 
 // Agregar valores al final del array
