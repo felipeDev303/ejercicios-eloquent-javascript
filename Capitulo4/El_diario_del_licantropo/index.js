@@ -14,6 +14,17 @@ for (let event of journalEvents(JOURNAL)) {
   }
 }
 
+for (let entry of JOURNAL) {
+  if (
+    entry.events.includes("peanuts") &&
+    !entry.events.includes("brushed teeth")
+  ) {
+    entry.events.push("peanuts and teeth");
+  }
+}
+
+console.log(phi(tableFor("peanuts and teeth", JOURNAL)));
+
 /* 
 Flujo del Código
 

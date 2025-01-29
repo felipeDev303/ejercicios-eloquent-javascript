@@ -57,7 +57,7 @@ function tableFor(event, journal) {
 
 - Inicializa un array vacío events.
 
-- Itera por cada entrada del journal.
+- Itera por cada entrada del journal. (Ciclo para recorrer array en JS moderno)
 
 - Itera por cada evento en la entrada.
 
