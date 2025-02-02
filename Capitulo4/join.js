@@ -19,6 +19,3 @@ console.log(palabras);
 ]
 */
 console.log(palabras.join(" ")); // Los pajaros secretarios se especializan en pisotear
-
-const bakambu = "Ja";
-console.log(bakambu.repeat(5));
