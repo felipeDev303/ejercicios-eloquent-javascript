@@ -32,3 +32,16 @@ function miLista2(a, b, ...masElementos) {
   console.log(masElementos[2]); //melon
 }
 miLista2("pera", "manzana", "naranja", "platano", "melon", "limón", "sandía");
+
+function maximo(...numeros) {
+  let resultado = -Infinity;
+  for (let numero of numeros) {
+    if (numero > resultado) resultado = numero;
+  }
+  return resultado;
+}
+console.log(maximo(4, 1, 9, -2));
+
+let numeros = [5, 1, 7];
+console.log(Math.max(...numeros)); // 7
+console.log(Math.max(9, ...numeros, 2)); //9
