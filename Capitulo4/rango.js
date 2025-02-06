@@ -1,11 +1,16 @@
+// Función rango recibe 2 parámetros el inicio y el final del array
 function rango(inicio, final) {
-  let listaDeNumeros = [inicio, ...resto, final];
+  // array de todos los números
+  let listaDeNumeros = [inicio];
+  // Primer número del array
   let resultado = inicio;
-  for (let i = inicio; i < final; i++) {
+
+  // Ciclo que itera rellenando el array desde el inicio al final
+  while (resultado < final) {
     resultado++;
     listaDeNumeros.push(resultado);
+    //listaDeNumeros.sort();
   }
-  return listaDeNumeros;
+  console.log(listaDeNumeros);
 }
-console.log(rango(2, 6));
-console.log(listaDeNumeros);
+rango(2, 50);
