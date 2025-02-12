@@ -1,29 +1,43 @@
-function Lista() {
-  this.head = null;
-}
+function arrayList(initialValues = []) {
+  // Función constructora Lista
 
-function Nodo(value) {
-  this.value = value;
-  this.next = null;
-}
-
-Lista.prototype.add = function (value) {
-  if (this.head === null) this.head = new Nodo(value);
-  else {
-    let referencia = this.head;
-    referencia.next = new Nodo(value);
-    while (referencia.next !== null) {
-      referencia = referencia.next;
-    }
-    referencia.next = new Nodo(valor);
+  function Lista() {
+    this.head = null;
   }
-};
 
-let list = new Lista();
-// let nodo = new Nodo(1); list.head = nodo;
-//let nodo2 = new Nodo(2); list.head.next = nodo2;
+  // Función constructora Nodo
 
-list.add(1);
-list.add(2);
+  function Nodo(value) {
+    this.value = value;
+    this.next = null;
+  }
+  // Método add (dentro de Lista.prototype)
+  Lista.prototype.add = function (value) {
+    let nuevoNodo = new Nodo(value); // Crea el nuevo nodo
+    if (this.head === null) {
+      this.head = nuevoNodo;
+    } else {
+      let referencia = this.head;
+      while (referencia.next !== null) {
+        referencia = referencia.next;
+      }
+      referencia.next = nuevoNodo;
+    }
+  };
 
-console.log(list);
+  // Crear la instancia de Lista
+  let list = new Lista();
+
+  // Agregar los valores iniciales
+  for (let value of initialValues) {
+    list.add(value);
+  }
+
+  // Devolver la instancia de Lista
+  return list;
+}
+
+let miArray = [1, 2, 3];
+let miLista = arrayList(miArray);
+
+console.log(miLista);
