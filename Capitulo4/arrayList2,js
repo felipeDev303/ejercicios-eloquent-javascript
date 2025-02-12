@@ -1,0 +1,55 @@
+class Nodo {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Lista {
+  constructor() {
+    this.head = null;
+  }
+
+  add(value) {
+    let nuevoNodo = new Nodo(value); // Crea el nuevo nodo
+
+    if (!this.head) {
+      this.head = nuevoNodo;
+    } else {
+      let referencia = this.head;
+      while (referencia.next) {
+        referencia = referencia.next;
+      }
+      referencia.next = nuevoNodo;
+    }
+  }
+
+  print() {
+    let referencia = this.head;
+    let resultado = [];
+    while (referencia) {
+      resultado.push(referencia.value);
+      referencia = referencia.next;
+    }
+    console.log(resultado.join(" -> "));
+  }
+}
+
+function arrayList(initialValues = []) {
+  // Crear la instancia de Lista
+  let list = new Lista();
+  // Agregar los valores iniciales
+  for (let value of initialValues) {
+    list.add(value);
+  }
+  // Devolver la instancia de Lista
+  return list;
+}
+
+let miArray = [1, 2, 3];
+let miLista = arrayList(miArray);
+
+miLista.print(); // Output: 1 -> 2 -> 3
+
+console.log(miArray);
+console.log(miLista);
