@@ -24,17 +24,6 @@ class Lista {
       referencia.next = nuevoNodo;
     }
   }
-
-  // Método para imprimir la lista
-  listAArray() {
-    let referencia = this.head;
-    let resultado = [];
-    while (referencia) {
-      resultado.push(referencia.value);
-      referencia = referencia.next;
-    }
-    console.log(resultado);
-  }
 }
 
 function arrayList(initialValues = []) {
@@ -48,10 +37,22 @@ function arrayList(initialValues = []) {
   return list;
 }
 
-let miArray = [1, 2, 3];
-let miLista = arrayList(miArray);
+// funcion para imprimir la lista creada en array
+function listAArray() {
+  let referencia = miLista.head;
+  let resultado = [];
+  while (referencia) {
+    resultado.push(referencia.value);
+    referencia = referencia.next;
+  }
+  return resultado;
+}
 
-miLista.listAArray(); // Output: 1 -> 2 -> 3
+let miArray = [1, 2, 3, 4, 5];
+
+let miLista = arrayList(miArray);
+let miArray2 = listAArray(miLista); // Output: 1 -> 2 -> 3
 
 console.log(miArray);
 console.log(miLista);
+console.log(miArray2);
