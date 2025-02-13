@@ -7,9 +7,10 @@ class Nodo {
 
 class Lista {
   constructor() {
-    this.head = null;
+    this.head = null; // Primer nodo de la lista
   }
 
+  // Método para agregar un nodo al final
   add(value) {
     let nuevoNodo = new Nodo(value); // Crea el nuevo nodo
 
@@ -24,6 +25,7 @@ class Lista {
     }
   }
 
+  // Método para imprimir la lista
   print() {
     let referencia = this.head;
     let resultado = [];
@@ -46,10 +48,16 @@ function arrayList(initialValues = []) {
   return list;
 }
 
+function listAArray() {
+  let myNewArray = [];
+}
+
 let miArray = [1, 2, 3];
 let miLista = arrayList(miArray);
+miLista.listAArray();
 
 miLista.print(); // Output: 1 -> 2 -> 3
 
 console.log(miArray);
 console.log(miLista);
+console.log(myNewArray);

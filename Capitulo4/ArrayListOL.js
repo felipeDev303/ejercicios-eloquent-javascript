@@ -46,3 +46,4 @@ miLista.agregar(1);
 miLista.agregar(2);
 miLista.agregar(3);
 miLista.imprimir(); // Output: 1 -> 2 -> 3
+console.log(miLista);
