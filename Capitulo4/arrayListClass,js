@@ -26,14 +26,14 @@ class Lista {
   }
 
   // Método para imprimir la lista
-  print() {
+  listAArray() {
     let referencia = this.head;
     let resultado = [];
     while (referencia) {
       resultado.push(referencia.value);
       referencia = referencia.next;
     }
-    console.log(resultado.join(" -> "));
+    console.log(resultado);
   }
 }
 
@@ -48,16 +48,10 @@ function arrayList(initialValues = []) {
   return list;
 }
 
-function listAArray() {
-  let myNewArray = [];
-}
-
 let miArray = [1, 2, 3];
 let miLista = arrayList(miArray);
-miLista.listAArray();
 
-miLista.print(); // Output: 1 -> 2 -> 3
+miLista.listAArray(); // Output: 1 -> 2 -> 3
 
 console.log(miArray);
 console.log(miLista);
-console.log(myNewArray);
