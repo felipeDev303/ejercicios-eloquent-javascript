@@ -2,54 +2,40 @@ function igualdadProdunda(result1, result2) {
   let type = typeof result1;
   let type2 = typeof result2;
 
-  if (type && type2 == "number") {
+  if (result1 === null || result2 === null) {
+    console.log("Error: Cannot convert undefined or null to object");
+  } else if (type && type2 === "object") {
+    Object.keys(result1).forEach((key) => {
+      console.log(`${key}: ${result1[key]}`);
+    });
+    Object.keys(result2).forEach((key) => {
+      console.log(`${key}: ${result2[key]}`);
+    });
+  } else if (type && type2 == "number") {
     if (result1 == result2) {
-      console.log("NÚMEROS IGUALES");
+      return true;
     } else {
       console.log("NÚMEROS DISTINTOS");
     }
-  } else if (type && type2 === "object") {
-    const OBJECT1 = Object.entries(result1).map((entry) => {
-      const [key, value] = entry;
-      console.log({ key, value });
-    });
-
-    const OBJECT2 = Object.entries(result2).map((entry) => {
-      const value = result2[key];
-      console.log(key, value);
-    });
   } else {
-    console.log("Guarda los dientes ministro");
+    console.log("Solo primitivos/objetos");
   }
 }
 
-//let result1 = 1; //{ news: [], profiles: { user: [] } };
-//let result2 = 2; // { news: [], profiles: { user: [] } };
+const result1 = null;
+const result2 = null;
+/*
+const result1 = {
+  nombre: "María",
+  edad: 25,
+  ciudad: "Madrid",
+};
 
-igualdadProdunda(1, []);
 
-/* KEY
-const mappedResults = Object.keys(results1).map(key => {
-    console.log(key)
-})
-
-// VALUE
-const mappedResults = Object.keys(results1).map(key => {
-    const value = results1[key]
-    console.log(value)
-
-})
-
- OBJECT VALUE
-const OBJECT = Object.values(results2);
-console.log(OBJECT);
-
-// OBJECT ENTRIES
-const OBJECT2 = Object.entries(results2);
-console.log(OBJECT2);
-
-// OBJECT ENTRIES
-const OBJECT3 = Object.entries(results2).map((entry) => {
-  const [key, value] = entry;
-  console.log({ key, value });
-});*/
+const result2 = {
+  nombre: "María",
+  edad: 25,
+  ciudad: "Madrid",
+};
+*/
+igualdadProdunda(result1, result2);
