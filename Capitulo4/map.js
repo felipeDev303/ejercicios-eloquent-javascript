@@ -23,5 +23,22 @@ const productsWhitDescount = products.map(function (product) {
   };
 });
 
+// Versión larga
+const nameProducts = products.map(function (product) {
+  return product.name;
+});
+
+// Version arrow:
+// reemplazar function por =>
+// si es un parametro se borran los () de este
+// y al haber solo una instrucción de retorno, la sacamos y dejamos el valor de retorno de manera implicita despues de la flecha
+const priceProducts = products.map((product) => product.price);
+
+//Versión Ultimate prime
+// Al repetir la palabra product, se elimina
+// Se desarma el parametro recibido, se vuelven a colocar los ()
+// Obteniendo solo propiedad idicada del parametro que nos llegue y retornandola
+const idProducts = products.map(({ id }) => id);
+
 console.log(products);
 console.log(productsWhitDescount);
