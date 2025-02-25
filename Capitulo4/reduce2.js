@@ -28,3 +28,5 @@ const totalPrecio = Object.values(productosPorCategoria).reduce(
   0
 ); // Salida esperada: 4700
 // ¿Cómo ayuda Object.values?: Transforma { ropa: 2500, calzado: 2200 } en [2500, 2200] para facilitar la segunda reducción.
+
+const reducido
