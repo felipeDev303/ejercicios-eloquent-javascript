@@ -1875,14 +1875,14 @@ var SCRIPTS = [
   },
 ];
 
-console.log(SCRIPTS.filter((codigo) => codigo.direction == "ttb"));
-
-// This makes sure the data is exported in node.js —
-// `require('./path/to/scripts.js')` will get you the array.
+// Si ambas condiciones se cumplen, exporta SCRIPTS en Node.js con module.exports = SCRIPTS.
 if (
   typeof module != "undefined" &&
-  module.exports &&
-  (typeof window == "undefined" || window.exports != exports)
+  module.exports && //  Si module está definido y module.exports existe, significa que está en un entorno Node.js.
+  (typeof window == "undefined" || window.exports != exports) // Se asegura de que no está en un navegador.
 )
+  //Esto permite que SCRIPTS sea accesible de forma global en Node.js sin necesidad de require().
   module.exports = SCRIPTS;
 if (typeof global != "undefined" && !global.SCRIPTS) global.SCRIPTS = SCRIPTS;
+// Si global está definido, significa que está en Node.js.
+// Si SCRIPTS aún no está definido en global, lo asigna.
