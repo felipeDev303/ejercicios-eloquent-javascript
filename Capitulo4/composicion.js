@@ -45,7 +45,7 @@ console.log(
 5. Redondeamos
 */
 
-// Lo mismo pero con un ciclo
+// Lo mismo pero con un ciclo : IMPERATIVO!!
 
 let total = 0,
   cuenta = 0;
