@@ -63,7 +63,85 @@ const beers = [
     price: 1200,
     alcohol: 4.5,
   },
+  {
+    name: "Kunstmann 0°",
+    price: 2000,
+    alcohol: 0,
+  },
 ];
+
+// Map: itera y multiplica (genera nueva colección)
+const beersApp = beers.map((element) => {
+  return {
+    name: element.name,
+    price: element.price * 1.22,
+    alcohol: element.alcohol,
+  };
+});
+
+// Reduce: suma
+const sum = beersApp.reduce((acc, curr) => acc + curr.price, 0);
+console.log(sum);
+
+const fns = [
+  () => console.log("soy el primero"),
+  () => console.log("soy el segundo"),
+  () => console.log("soy el tercero"),
+];
+
+fns.forEach((element) => element());
+
+/*
+const rebeerse = beers.reverse();
+
+// every & some
+let fn = (e) => e.price > 0;
+let fn2 = (e) => e.alcohol < 1;
+console.log(beers.every(fn)); // true
+console.log(beers.some(fn2)); // true
+
+// Find & filter
+const beer = beers.find((element) => element.name === "Corona");
+const alcoholFree = beers.find((element) => element.alcohol < 1);
+const alcoholBeer = beers.filter((element) => element.alcohol > 1);
+console.log(alcoholFree);
+console.log(beer);
+console.log(alcoholBeer);
+
+// Sort de objetos
+beers.sort((a, b) => a.alcohol - b.alcohol);
+
+beers.sort((a, b) => {
+  if (a.name > b.name) {
+    return 1;
+  }
+  if (a.name < b.name) {
+    return -1;
+  }
+
+  return 0;
+});
+
+// For Each
+beers.forEach((element) => console.log(element));
+
+// For Each con indice
+beers.forEach((element, i) => {
+  console.log(element);
+  console.log("Index: " + i);
+});
+
+// Versión clásica del for each
+function print(element) {
+  console.log(element);
+  console.log("Ciclo");
+}
+
+beers.forEach(print);
+
+// Sort de números
+const num = [4, 5, 7, 2, 1, 0];
+console.log(num.sort());
 
 // Función de primer orden
 let vienesa = function () {
@@ -88,9 +166,10 @@ function sandwich(f) {
 }
 
 sandwich(cecina);
+*/
 
 showDom("array1", beers);
-showDom("array2", numbers2);
+showDom("array2", beersApp);
 
 function show(arr) {
   for (let i = 0; i < arr.length; i++) {
