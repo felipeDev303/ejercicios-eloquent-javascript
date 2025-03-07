@@ -1,24 +1,25 @@
 // Crea una función de orden superior llamada ciclo
 // Que itere y que reciba una función, llama al cuerpo y llama actualizacioin
 
-function ciclo (arr, prueba, )
-
-//
-function prueba(num) {
-  console.log(`Evaluacion 1: ${num}`);
-  return num < 10; // Detener si devuelve false
-}
-
-function cuerpo(num) {
-  console.log(`Evaluación 2: ${num}`);
-  return num * 2; // multiplicar por 2 el número
-}
-
-for (let num of numeros) {
-  if (!prueba(num)) {
-    break; // Detiene el ciclo si retorna false
+function ciclo(arr, prueba, actualizar, cuerpo) {
+  while (arr.some(prueba)) {
+    arr = arr.map(cuerpo).map(actualizar);
+    console.log("Nuevo estado del array:", arr);
   }
-  cuerpo(num);
+  console.log("Proceso detenido con:", arr);
+  return arr;
 }
 
-const numeros = [1, 2, 3, 4, 5, 11];
+//Función de prueba: Detiene si algún valor es mayor o igual a 100
+const prueba = (x) => x < 100;
+
+// Función de transformación: Multiplica por 2
+const cuerpo = (x) => x * 2;
+
+// Función de actualización: Suma 5
+const actualizar = (x) => x + 5;
+
+// Array inicial
+const numeros = [2, 4, 8];
+
+ciclo(numeros, prueba, actualizar, cuerpo);
