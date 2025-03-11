@@ -42,7 +42,7 @@ console.log(mayorQueSeis(21));
 /**********Y TRANSFORMACIÓN**************/
 /****************************************/
 
-const numeros = [10, 45, 65, 32, 76, 99];
+//const numeros = [10, 45, 65, 32, 76, 99];
 const animales = ["Perro", "Gato", "Vaca", "Tortuga"];
 const productos = [
   { nombre: "Cristal", categoria: "cerveza", precio: 800 },
@@ -67,7 +67,7 @@ console.log(tortuga);
 let productoElegido = prompt("Ingrese el producto que quiere comprar");
 
 console.log(productos.find((producto) => producto.nombre === productoElegido));
-*/
+
 // filter() => Recorrer el array y retornar uno nuevo con todos los elementos que cumplan con esa condición
 
 const productosBaratos = productos.filter(
@@ -77,3 +77,40 @@ console.log(productosBaratos);
 
 const productosCaros = productos.filter((producto) => producto.precio > 1000);
 console.log(productosCaros);
+
+
+// some() => recorrer el array y retornar booleano si encuentra o no un elemento según una condición
+const ofertas = productos.some((producto) => producto.precio < 1000);
+console.log(ofertas)
+
+
+// map() => Recorre el array y devuelve un nuevo array con los elementos transformados
+
+const doble = numeros.map((numero) => numero * 2);
+console.log(doble);
+
+const preciosConIva = productos.map((producto) => {
+  return {
+    nombre: producto.nombre,
+    precio: producto.precio * 1.19,
+  };
+});
+console.log(productos);
+console.log(preciosConIva);
+
+
+// reduce() => recorre el array y devuelve un único valor tras una operación sobre los elementos
+
+const numeros = [10, 45, 65, 32, 76, 99];
+
+const total = numeros.reduce((acc, el) => acc + el, 0);
+console.log(total);
+
+// sort() => Reordena el array según el criterio que le indiquemos
+
+numeros.sort((a, b) => a - b);
+console.log(numeros);
+
+numeros.sort((a, b) => a + b);
+console.log(numeros);
+*/
