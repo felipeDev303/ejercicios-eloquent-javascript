@@ -1,4 +1,4 @@
-const SCRIPTS = require("./scripts.js");
+const SCRIPTS = require("../Capitulo4/scripts.js");
 
 function cuentaDeCaracteres(codigo) {
   return codigo.ranges.reduce((cuenta, [desde, hasta]) => {
