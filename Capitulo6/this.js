@@ -1,28 +1,33 @@
-//  Cada función tiene su propia vinculación this
-// Una función con function, this se asigna dinámicamente dependiendo de cómo se llame la función
+// THIS
 
-function mostrarThis() {
-  console.log(this);
+function getName() {
+  //console.log(this); // nos muestra todo el objeto global si no hay otro dueño
+  console.log(`Mi nombre es ${this.nick}`);
 }
 
-const obj = { metodo: mostrarThis };
+//global.nick = "global-nick";
 
-mostrarThis(); // Cuando llamas mostrarThis() directamente, this depende del modo de ejecución.
-//  (en modo estricto es undefined, en no estricto es window)
+//getName(); // global === globalThis === window (al principio no tenemos nada por lo que es undefined, es el dueño de la funcion)
 
-obj.metodo(); // Cuando llamas obj.metodo(), this dentro de mostrarThis apunta a obj.
-
-// Las funciones flecha no crean su propia vinculación this: lo heredan del contexto donde se definen
-
-const objeto = {
-  nombre: "Ejemplo",
-  metodo: function () {
-    const funcionFlecha = () => {
-      // funcionFlecha no tiene su propio this, así que usa el this de metodo(), que es objeto.
-      console.log(this.nombre);
-    };
-    funcionFlecha(); // `this` se mantiene ligado a `objeto`
-  },
+var felipe = {
+  nick: "muñeco",
+  getName,
 };
 
-objeto.metodo(); // "Ejemplo"
+felipe.getName(); // el dueño de la ejecución del método es el objeto felipe que luego llegará al this del getName
+// window.getName(); // 'Mi nombre es undefined'
+
+// THIS EN ARROW FUNCTION: no le puede cambiar el valor a this
+function context() {
+  const getName = () => {
+    console.log(`Mi nombre es ${this.nick}`);
+  };
+  getName();
+}
+
+var king = {
+  nick: "Lebron",
+  context: context,
+};
+
+king.context();
