@@ -31,3 +31,18 @@ var king = {
 };
 
 king.context();
+
+// Problemas comunes con this
+
+// Harry Potter y el misterio de this
+const harry = {
+  nombre: "Harry",
+  saludar: function () {
+    console.log(`Hola, me llamo ${this.nombre}!`);
+  },
+};
+
+harry.saludar(); // Hola, me llamo Harry!
+
+const saludar = harry.saludar;
+saludar(); // Hola, me llamo undefined!
