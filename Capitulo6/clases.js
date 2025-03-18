@@ -29,5 +29,24 @@ class Conejo {
 let conejoAsesino = new Conejo("asesino");
 let conejoNegro = new Conejo("negro");
 
-console.log(conejoAsesino);
-console.log(conejoNegro);
+//console.log(conejoAsesino);
+//console.log(conejoNegro);
+
+// Tienes permitido omitir el nombre de la clase en una expresión de clase.
+/*let objeto = new (class {
+  obtenerPalabra() {
+    return "hola";
+  }
+})();
+console.log(objeto.obtenerPalabra());
+// -> hola
+*/
+// Sobreescribir propiedades
+Conejo.prototype.dientes = "pequeños";
+console.log(conejoAsesino.dientes); // pequeños
+
+conejoAsesino.dientes = "largos,filosos, y sangrientos";
+console.log(conejoAsesino.dientes); // largos,filosos, y sangrientos
+
+console.log(conejoNegro.dientes); //pequeños
+console.log(Conejo.prototype.dientes); // pequeños
