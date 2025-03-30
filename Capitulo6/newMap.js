@@ -21,9 +21,13 @@ edades.set("Julia", 37);
 edades.set("Felipe", 36);
 edades.set("Liang", 38);
 
+// Obtener el valor de una clave
 console.log(`Julia tiene ${edades.get("Julia")}`);
 // -> Julia tiene 37
+
+// Comprobar si existe una clave
 console.log("Se conoce la edad de Jack?", edades.has("Jack"));
-// -> Se conoce la edad de Jack? false
+// -> Se conoce la edad de Jack? false (como in en el objeto)
+
 console.log(edades.has("toString"));
 // -> false
