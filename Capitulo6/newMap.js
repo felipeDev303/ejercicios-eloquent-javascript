@@ -31,3 +31,11 @@ console.log("Se conoce la edad de Jack?", edades.has("Jack"));
 
 console.log(edades.has("toString"));
 // -> false
+
+// Comprobar si existe una clave (en el prototipo)
+console.log({ x: 1 }.hasOwnProperty("x"));
+// -> true
+
+// Comprobar si existe una clave (en el prototipo)
+console.log({ x: 1 }.hasOwnProperty("toString"));
+// -> false
