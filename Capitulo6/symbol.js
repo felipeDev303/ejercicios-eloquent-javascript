@@ -58,3 +58,54 @@ let objetoString = {
 
 console.log(objetoString[simboloToString]());
 // → "una cuerda de cañamo"
+
+let id = "hola";
+let id2 = "hola";
+
+console.log(id === id2); // true}
+
+let id3 = Symbol("id3");
+let id4 = Symbol("id4");
+
+console.log(id3 === id4); // false
+
+console.log(id3, id4); // Symbol(id3) Symbol(id4)
+
+console.log(typeof id3); // symbol
+console.log(typeof id4); // symbol
+
+const NOMBRE = Symbol("nombre");
+const SALUDAR = Symbol("saludar");
+
+const persona = {
+  [NOMBRE]: "Juan",
+};
+
+persona.NOMBRE = "Juan Pérez";
+
+console.log(persona[NOMBRE]); // Juan
+console.log(persona.NOMBRE); // Juan Pérez
+console.log(persona["NOMBRE"]); // Juan Pérez
+
+persona[SALUDAR] = function () {
+  console.log(`Hola, soy ${this[NOMBRE]}`);
+};
+
+persona[SALUDAR](); // Hola, soy Juan
+
+console.log(persona); /*{
+  NOMBRE: 'Juan Pérez',
+  [Symbol(nombre)]: 'Juan',
+  [Symbol(nombre)]: 'Juan',
+  [Symbol(saludar)]: [Function (anonymous)]
+}*/
+
+for (let propiedad in persona) {
+  console.log(propiedad); // NOMBRE
+}
+
+for (let propiedad in persona) {
+  console.log(persona[propiedad]); // Juan Pérez
+}
+
+console.log(Object.getOwnPropertySymbols(persona)); // [ Symbol(nombre), Symbol(saludar) ]
