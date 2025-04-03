@@ -23,7 +23,7 @@ class List {
     this.value = value;
     this.rest = rest;
   }
-  // Método estatico que convierte un array en una lista enlazada.
+  // Método estatico que convierte un array en una lista enlazada (El método estatico apunta a la clase, no a la instancia)
   static fromArray(array) {
     // Si el array está vacío, devuelve null (no hay nodos)
     let result = null;
